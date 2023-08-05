@@ -15,7 +15,11 @@ class Server {
     }
 
     middlewares() {
+        /* CORS */
         this.app.use(cors())
+        /* Lectura y Parseo del Body */
+        this.app.use( express.json() );
+        /* Directorio Público */
         this.app.use( express.static('public') );
     }
 
